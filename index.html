@@ -840,4 +840,705 @@
       background: #00fff7;
       border-radius: 50%;
       box-shadow:
-        0 0 20px
+        0 0 20px #00fff7aa;
+display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1001;
+      transition: background 0.3s ease;
+      animation: pulse 2.5s infinite;
+    }
+    #chatbot-toggle:hover {
+      background: #00bcd4;
+      box-shadow:
+        0 0 30px #00bcd4,
+        0 0 60px #00bcd4;
+    }
+    #chatbot-toggle i {
+      color: #001d3d;
+      font-size: 1.75rem;
+    }
+    /* Animated button pulse */
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.7;
+      }
+      70% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .features {
+        grid-template-columns: 1fr;
+      }
+      .pricing-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      #chatbot {
+        width: 90vw;
+        height: 420px;
+        bottom: 80px;
+        right: 5vw;
+      }
+      #chatbot-toggle {
+        bottom: 16px;
+        right: 16px;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <!-- Animated background -->
+  <div aria-hidden="true" id="animated-bg">
+  </div>
+  <!-- Header -->
+  <header aria-label="Primary navigation" role="banner">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a aria-label="Oasis AI homepage" class="flex items-center space-x-3" href="#" tabindex="0">
+     <img alt="Oasis AI logo, stylized letters OAI in cyan on dark background with futuristic style" height="48" id="logo-img" loading="lazy" src="https://storage.googleapis.com/a1aa/image/5588ce21-3d14-4e6b-f3e9-5cff6f9e8a17.jpg" tabindex="0" width="48"/>
+     <span class="text-2xl font-bold neon-text" tabindex="0">
+      Oasis AI
+     </span>
+    </a>
+    <nav class="hidden md:flex space-x-8 font-semibold text-gray-300">
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#features" tabindex="0">
+      Features
+     </a>
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#solutions" tabindex="0">
+      Solutions
+     </a>
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#pricing" tabindex="0">
+      Pricing
+     </a>
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#special-offer" tabindex="0">
+      Special Offer
+     </a>
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#testimonials" tabindex="0">
+      Testimonials
+     </a>
+     <a class="hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#contact" tabindex="0">
+      Contact
+     </a>
+    </nav>
+    <a aria-label="Contact Oasis AI on WhatsApp" class="hidden md:inline-block bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-bold px-5 py-2 rounded-lg transition" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+     <i class="fab fa-whatsapp mr-2">
+     </i>
+     Contact Us
+    </a>
+    <button aria-label="Toggle mobile menu" class="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400" id="mobile-menu-button">
+     <i class="fas fa-bars fa-lg">
+     </i>
+    </button>
+   </div>
+   <nav aria-label="Mobile Navigation" class="md:hidden bg-[#001d3d] bg-opacity-95 backdrop-blur-md hidden px-6 py-4 space-y-4 font-semibold text-gray-300" id="mobile-menu" role="navigation">
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#features" tabindex="0">
+     Features
+    </a>
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#solutions" tabindex="0">
+     Solutions
+    </a>
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#pricing" tabindex="0">
+     Pricing
+    </a>
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#special-offer" tabindex="0">
+     Special Offer
+    </a>
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#testimonials" tabindex="0">
+     Testimonials
+    </a>
+    <a class="block hover:text-cyan-400 focus:text-cyan-400 focus:outline-none" href="#contact" tabindex="0">
+     Contact
+    </a>
+    <a aria-label="Contact Oasis AI on WhatsApp" class="block bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-bold px-5 py-2 rounded-lg text-center transition" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+     <i class="fab fa-whatsapp mr-2">
+     </i>
+     Contact Us
+    </a>
+   </nav>
+  </header>
+  <!-- Hero Section -->
+  <section aria-label="Hero section introducing Oasis AI chatbot solutions" class="hero">
+   <h1 class="neon-text" tabindex="0">
+    Revolutionize Your Business
+    <br/>
+    with
+    <span class="text-yellow-400">
+     Oasis AI Chatbots
+    </span>
+   </h1>
+   <p tabindex="0">
+    Intelligent, scalable, and customizable AI chatbots designed to enhance customer engagement, automate support, and boost sales.
+   </p>
+   <a aria-label="Contact Oasis AI on WhatsApp" class="btn-primary" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+    <i class="fab fa-whatsapp">
+    </i>
+    Get Started Now
+   </a>
+  </section>
+  <!-- Special Offer Section -->
+  <section aria-label="Special offer for chatbot development" class="max-w-5xl mx-auto bg-[#00264d] rounded-xl p-10 my-20 shadow-lg" id="special-offer">
+   <h2 class="text-3xl text-center text-yellow-400 font-extrabold mb-6" tabindex="0">
+    Special Launch Offer
+   </h2>
+   <p class="text-center text-lg text-gray-300 mb-4" tabindex="0">
+    We build
+    <span class="text-cyan-400 font-bold">
+     any type of chatbot
+    </span>
+    for your business at just
+    <span class="text-cyan-400 text-4xl font-extrabold">
+     ₹99
+    </span>
+    for your first order!
+   </p>
+   <p class="text-center text-gray-400 text-lg max-w-xl mx-auto" tabindex="0">
+    Future orders are priced based on your chatbot's specifications and complexity. Get a custom AI solution tailored to your needs with expert support.
+   </p>
+   <div class="text-center mt-8">
+    <a aria-label="Contact Oasis AI on WhatsApp for special chatbot offer" class="btn-primary" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+     Contact Us Now
+    </a>
+   </div>
+  </section>
+    <!-- Features Section -->
+  <section aria-label="Features of Oasis AI chatbots" class="features" id="features">
+   <article aria-label="AI-Powered Conversations feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-robot feature-icon">
+    </i>
+    <h3 class="feature-title">
+     AI-Powered Conversations
+    </h3>
+    <p class="feature-desc">
+     Natural language understanding and machine learning to provide human-like interactions that improve over time.
+    </p>
+   </article>
+   <article aria-label="Customizable Workflows feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-cogs feature-icon">
+    </i>
+    <h3 class="feature-title">
+     Customizable Workflows
+    </h3>
+    <p class="feature-desc">
+     Tailor chatbot responses, triggers, and integrations to fit your unique business processes and customer needs.
+    </p>
+   </article>
+   <article aria-label="Analytics &amp; Insights feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-chart-line feature-icon">
+    </i>
+    <h3 class="feature-title">
+     Analytics &amp; Insights
+    </h3>
+    <p class="feature-desc">
+     Track user interactions, measure engagement, and optimize chatbot performance with detailed analytics dashboards.
+    </p>
+   </article>
+   <article aria-label="Multi-Platform Support feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-mobile-alt feature-icon">
+    </i>
+    <h3 class="feature-title">
+     Multi-Platform Support
+    </h3>
+    <p class="feature-desc">
+     Deploy your chatbot on websites, mobile apps, WhatsApp, Facebook Messenger, and more for seamless customer reach.
+    </p>
+   </article>
+   <article aria-label="Secure &amp; Compliant feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-shield-alt feature-icon">
+    </i>
+    <h3 class="feature-title">
+     Secure &amp; Compliant
+    </h3>
+    <p class="feature-desc">
+     Built with enterprise-grade security and compliance standards to protect your data and customer privacy.
+    </p>
+   </article>
+   <article aria-label="24/7 Customer Support feature" class="feature-card" role="region" tabindex="0">
+    <i aria-hidden="true" class="fas fa-headset feature-icon">
+    </i>
+    <h3 class="feature-title">
+     24/7 Customer Support
+    </h3>
+    <p class="feature-desc">
+     Our expert team is available around the clock to assist you with setup, customization, and troubleshooting.
+    </p>
+   </article>
+  </section>
+  <!-- Solutions Section -->
+  <section aria-label="Business solutions offered by Oasis AI chatbots" class="max-w-7xl mx-auto px-6 py-20" id="solutions">
+   <h2 class="text-4xl neon-text text-center mb-12 tracking-wide" tabindex="0">
+    Tailored Solutions for Every Industry
+   </h2>
+   <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <div aria-label="E-commerce solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing e-commerce with shopping cart and digital elements in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/3037136e-9ecf-4745-0c91-bc411a8e41ad.jpg" width="120"/>
+     <h3 class="feature-title">
+      E-commerce
+     </h3>
+     <p class="feature-desc">
+      Boost sales with personalized product recommendations, instant customer support, and streamlined order tracking.
+     </p>
+    </div>
+    <div aria-label="Healthcare solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing healthcare with a medical cross and AI elements in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/404fa318-cffa-4de6-f626-c372c5b39e77.jpg" width="120"/>
+     <h3 class="feature-title">
+      Healthcare
+     </h3>
+     <p class="feature-desc">
+      Provide patients with appointment scheduling, symptom checking, and medication reminders through AI-powered chatbots.
+     </p>
+    </div>
+    <div aria-label="Finance solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing finance with a dollar sign and digital circuit in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/e37cfd6d-0643-4144-248d-8a57bf725bf7.jpg" width="120"/>
+     <h3 class="feature-title">
+      Finance
+     </h3>
+     <p class="feature-desc">
+      Automate customer inquiries, fraud detection alerts, and personalized financial advice with secure AI chatbots.
+     </p>
+    </div>
+    <div aria-label="Education solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing education with a graduation cap and AI elements in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2254f5a3-7fbe-4e43-57a0-222253cb529b.jpg" width="120"/>
+     <h3 class="feature-title">
+      Education
+     </h3>
+     <p class="feature-desc">
+      Enhance learning with AI tutors, instant Q&amp;A, and personalized study plans accessible anytime, anywhere.
+     </p>
+    </div>
+    <div aria-label="Travel &amp; Hospitality solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing travel with a globe and airplane in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/4d879864-f0de-4b95-3217-3f8275144f73.jpg" width="120"/>
+     <h3 class="feature-title">
+      Travel &amp; Hospitality
+     </h3>
+     <p class="feature-desc">
+      Deliver instant booking assistance, itinerary updates, and customer feedback collection with AI chatbots.
+     </p>
+    </div>
+    <div aria-label="Real Estate solution" class="feature-card" role="region" tabindex="0">
+     <img alt="Icon representing real estate with a house and digital network in cyan and black" class="mb-6 rounded-full mx-auto" height="120" loading="lazy" src="https://storage.googleapis.com/a1aa/image/1118ffd6-3440-4a7b-51fa-c7cae6b0ba66.jpg" width="120"/>
+     <h3 class="feature-title">
+      Real Estate
+     </h3>
+     <p class="feature-desc">
+      Automate property inquiries, schedule viewings, and provide virtual tours with intelligent chatbot assistants.
+     </p>
+    </div>
+   </div>
+  </section>
+  <!-- Pricing Section -->
+  <section aria-label="Pricing plans for Oasis AI chatbot services" class="pricing-section" id="pricing">
+   <h2 tabindex="0">
+    Flexible Pricing Plans
+   </h2>
+   <div class="pricing-cards">
+    <div aria-label="Starter pricing plan" class="pricing-card" role="region" tabindex="0">
+     <h3 class="pricing-title">
+      Starter
+     </h3>
+     <div class="pricing-price">
+      ₹4999
+     </div>
+     <div class="pricing-period">
+      /month
+     </div>
+     <ul class="pricing-features">
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Up to 1,000 chats/month
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Basic AI chatbot features
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       WhatsApp integration
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Email support
+      </li>
+     </ul>
+     <a class="btn-pricing" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+      Choose Plan
+     </a>
+    </div>
+    <div aria-label="Professional pricing plan" class="pricing-card" role="region" style="border: 4px solid #00fff7;" tabindex="0">
+     <h3 class="pricing-title">
+      Professional
+     </h3>
+     <div class="pricing-price">
+      ₹14999
+     </div>
+     <div class="pricing-period">
+      /month
+     </div>
+     <ul class="pricing-features">
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Up to 10,000 chats/month
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Advanced AI &amp; NLP features
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Multi-platform integration
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Priority support
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Analytics dashboard
+      </li>
+     </ul>
+     <a class="btn-pricing" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+      Choose Plan
+     </a>
+    </div>
+    <div aria-label="Enterprise pricing plan" class="pricing-card" role="region" tabindex="0">
+     <h3 class="pricing-title">
+      Enterprise
+     </h3>
+     <div class="pricing-price">
+      Custom
+     </div>
+     <ul class="pricing-features">
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Unlimited chats
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Fully customizable AI models
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       Dedicated account manager
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       24/7 premium support
+      </li>
+      <li>
+       <i class="fas fa-check-circle">
+       </i>
+       On-premise deployment options
+      </li>
+     </ul>
+     <a class="btn-pricing" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+      Contact Us
+     </a>
+    </div>
+   </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section aria-label="Customer testimonials for Oasis AI chatbots" class="testimonials" id="testimonials">
+   <h2 tabindex="0">
+    What Our Clients Say
+   </h2>
+   <article aria-label="Testimonial from Jayden Doe" class="testimonial-card" role="region" tabindex="0">
+    <img alt="Photo of Jayden Doe, a smiling young man with short black hair and glasses, client testimonial" class="testimonial-photo" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9fba4c1f-1a60-466b-7fae-f4950d061795.jpg" width="80"/>
+    <div class="testimonial-content">
+     <p class="testimonial-text">
+      "Oasis AI transformed our customer support with their chatbot. Our response times have halved and customer satisfaction has skyrocketed!"
+     </p>
+     <p class="testimonial-author">
+      Jayden Doe
+     </p>
+     <p class="testimonial-role">
+      CEO, TechNova Solutions
+     </p>
+    </div>
+   </article>
+   <article aria-label="Testimonial from Anika Sharma" class="testimonial-card" role="region" tabindex="0">
+    <img alt="Photo of Anika Sharma, a confident woman with long dark hair and a bright smile, client testimonial" class="testimonial-photo" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/9b6994c5-7b14-4db7-185e-ea2f0a398e21.jpg" width="80"/>
+    <div class="testimonial-content">
+     <p class="testimonial-text">
+      "The AI chatbot from Oasis AI helped us increase sales by 30% in just three months. The integration was seamless and the support team is fantastic."
+     </p>
+     <p class="testimonial-author">
+      Anika Sharma
+     </p>
+     <p class="testimonial-role">
+      Marketing Head, ShopEase
+     </p>
+    </div>
+   </article>
+   <article aria-label="Testimonial from Rahul Mehta" class="testimonial-card" role="region" tabindex="0">
+    <img alt="Photo of Rahul Mehta, a middle-aged man with short hair and a friendly smile, client testimonial" class="testimonial-photo" height="80" loading="lazy" src="https://storage.googleapis.com/a1aa/image/ff8d660e-e6d5-45cf-bc1c-28a14cadeffd.jpg" width="80"/>
+    <div class="testimonial-content">
+     <p class="testimonial-text">
+      "Their chatbot solution is incredibly intuitive and customizable. It has become an essential part of our customer engagement strategy."
+     </p>
+     <p class="testimonial-author">
+      Rahul Mehta
+     </p>
+     <p class="testimonial-role">
+      Operations Manager, FinServe
+     </p>
+    </div>
+   </article>
+  </section>
+  <!-- Contact Section -->
+  <section aria-label="Contact Oasis AI chatbot business" class="contact-section" id="contact">
+   <h2 tabindex="0">
+    Get in Touch
+   </h2>
+   <p tabindex="0">
+    Email us directly at
+    <a class="contact-email" href="mailto:trideepghoshroady@gmail.com">
+     trideepghoshroady@gmail.com
+    </a>
+   </p>
+   <p tabindex="0">
+    Or contact us on WhatsApp for instant support and inquiries:
+   </p>
+   <a aria-label="Contact Oasis AI on WhatsApp" class="contact-whatsapp" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+    <i class="fab fa-whatsapp">
+    </i>
+    WhatsApp Us
+   </a>
+  </section>
+  <!-- Footer -->
+  <footer role="contentinfo">
+   <p>
+    © 2024 Oasis AI. All rights reserved.
+   </p>
+   <div class="mt-2">
+    <a aria-label="Contact Oasis AI on WhatsApp" href="https://wa.me/c/916291378773" rel="noopener noreferrer" tabindex="0" target="_blank">
+     <i class="fab fa-whatsapp">
+     </i>
+    </a>
+    <a aria-label="Oasis AI LinkedIn profile" href="https://www.linkedin.com/company/oasis-ai-chatbots" rel="noopener noreferrer" tabindex="0" target="_blank">
+     <i class="fab fa-linkedin">
+     </i>
+    </a>
+    <a aria-label="Oasis AI Twitter profile" href="https://twitter.com/oasis_ai" rel="noopener noreferrer" tabindex="0" target="_blank">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+   </div>
+  </footer>
+  <!-- Chatbot Widget -->
+  <div aria-atomic="false" aria-label="Customer support chatbot" aria-live="polite" id="chatbot" role="region">
+   <header id="chatbot-header">
+    Oasis AI Support
+    <i aria-label="Close chatbot" class="fas fa-times" id="chatbot-close" role="button" tabindex="0">
+    </i>
+   </header>
+   <div aria-live="polite" aria-relevant="additions" id="chatbot-messages" tabindex="0">
+   </div>
+   <form aria-label="Send message to chatbot" autocomplete="off" id="chatbot-form">
+    <div id="chatbot-input-area">
+     <input aria-label="Type your message here" autocomplete="off" id="chatbot-input" maxlength="500" name="chatbot-input" placeholder="Ask me anything..." required="" spellcheck="false" type="text"/>
+     <button aria-label="Send message" id="chatbot-send" type="submit">
+      <i class="fas fa-paper-plane">
+      </i>
+     </button>
+    </div>
+   </form>
+  </div>
+  <button aria-label="Open chatbot" id="chatbot-toggle">
+   <i class="fas fa-comments">
+   </i>
+  </button>
+  <script>
+   // Mobile menu toggle
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Header background change on scroll
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    // Animated background dots and lines
+    const animatedBg = document.getElementById("animated-bg");
+    const dotCount = 40;
+    const lineCount = 20;
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Create dots
+    for (let i = 0; i < dotCount; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      const size = randomRange(4, 10);
+      dot.style.width = `${size}px`;
+      dot.style.height = `${size}px`;
+      dot.style.left = `${randomRange(0, 100)}vw`;
+      dot.style.top = `${randomRange(0, 100)}vh`;
+      dot.style.animationDelay = `${randomRange(0, 10)}s`;
+      dot.style.animationDuration = `${randomRange(8, 15)}s`;
+      animatedBg.appendChild(dot);
+    }
+
+    // Create lines
+    for (let i = 0; i < lineCount; i++) {
+      const line = document.createElement("div");
+      line.classList.add("line");
+      const width = randomRange(50, 200);
+      line.style.width = `${width}px`;
+      line.style.left = `${randomRange(0, 100)}vw`;
+      line.style.top = `${randomRange(0, 100)}vh`;
+      line.style.animationDelay = `${randomRange(0, 4)}s`;
+      line.style.animationDuration = `${randomRange(3, 6)}s`;
+      animatedBg.appendChild(line);
+    }
+
+    // Chatbot widget logic
+    const chatbot = document.getElementById("chatbot");
+    const chatbotToggle = document.getElementById("chatbot-toggle");
+    const chatbotClose = document.getElementById("chatbot-close");
+    const chatbotMessages = document.getElementById("chatbot-messages");
+    const chatbotForm = document.getElementById("chatbot-form");
+    const chatbotInput = document.getElementById("chatbot-input");
+
+    // Open chatbot
+    chatbotToggle.addEventListener("click", () => {
+      chatbot.classList.add("open");
+      chatbotToggle.style.display = "none";
+      chatbotInput.focus();
+      if (!chatbotMessages.hasChildNodes()) {
+        addBotMessage(
+          "Hello! 👋 I'm Oasis AI's virtual assistant. How can I help you today?"
+        );
+      }
+    });
+
+    // Close chatbot
+    chatbotClose.addEventListener("click", closeChatbot);
+    chatbotClose.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        closeChatbot();
+      }
+    });
+
+    function closeChatbot() {
+      chatbot.classList.remove("open");
+      chatbotToggle.style.display = "flex";
+      chatbotMessages.innerHTML = "";
+    }
+
+    // Add message to chat window
+    function addMessage(text, sender = "bot") {
+      const messageEl = document.createElement("div");
+      messageEl.classList.add("message", sender);
+      const textEl = document.createElement("div");
+      textEl.classList.add("message-text");
+      textEl.textContent = text;
+      messageEl.appendChild(textEl);
+      chatbotMessages.appendChild(messageEl);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    // Add bot message with delay for realism
+    function addBotMessage(text) {
+      setTimeout(() => {
+        addMessage(text, "bot");
+      }, 600);
+    }
+
+    // Simple chatbot response logic (mock)
+    function getBotResponse(userText) {
+      const text = userText.toLowerCase();
+      if (
+        text.includes("price") ||
+        text.includes("cost") ||
+        text.includes("charge") ||
+        text.includes("₹") ||
+        text.includes("rupee")
+      ) {
+        return "Our chatbot development starts at ₹99 for the first order. Future orders are priced based on your specifications. Would you like to know more?";
+      }
+      if (
+        text.includes("build") ||
+        text.includes("create") ||
+        text.includes("develop") ||
+        text.includes("custom")
+      ) {
+        return "We build any type of chatbot tailored to your business needs. Please share your requirements, and we'll provide a custom quote.";
+      }
+      if (
+        text.includes("contact") ||
+        text.includes("email") ||
+        text.includes("support")
+      ) {
+        return "You can reach us at trideepghoshroady@gmail.com or contact us on WhatsApp at https://wa.me/c/916291378773";
+      }
+      if (
+        text.includes("hello") ||
+        text.includes("hi") ||
+        text.includes("hey")
+      ) {
+        return "Hello! How can I assist you with your chatbot needs today?";
+      }
+      return "Thanks for reaching out! Please provide more details or ask any questions about our AI chatbot services.";
+    }
+
+    // Handle form submission
+    chatbotForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const userText = chatbotInput.value.trim();
+      if (!userText) return;
+      addMessage(userText, "user");
+      chatbotInput.value = "";
+      chatbotInput.disabled = true;
+      // Simulate bot thinking delay
+      setTimeout(() => {
+        const botReply = getBotResponse(userText);
+        addBotMessage(botReply);
+       chatbotInput.disabled = false;
+        chatbotInput.focus();
+      }, 1000);
+    });
+
+    // Accessibility: focus chatbot input on open
+    chatbot.addEventListener("transitionend", () => {
+      if (chatbot.classList.contains("open")) {
+        chatbotInput.focus();
+      }
+    });
+  </script>
+ </body>
+</html>
